@@ -1,0 +1,34 @@
+#keyboard {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(75px, 1fr));
+    gap: 0.5rem;
+    margin-top: 2rem;
+}
+
+#letter-buttons {
+    width: 100%;
+    border: 3px solid black;
+    background: none;
+    aspect-ratio: 1 / 1;
+    font-size: 2.5rem ;
+    text-transform: uppercase;
+    padding: .5rem;
+    font-weight: bold;
+    cursor: pointer;
+    color: black;
+}
+
+#letter-buttons:active {
+    background-color: rgb(90, 25, 95);
+    color: white;
+}
+
+#letter-buttons:disabled {
+    opacity: .3;
+}
+
+#letter-buttons:hover:not(:disabled),
+#letter-buttons:focus:not(:disabled) {
+    background-color: rgb(63, 111, 154);
+    color: white;
+}
