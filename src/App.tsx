@@ -3,6 +3,7 @@ import words from "./wordList.json"
 import { HangmanDrawing } from './components/HangmanDrawing'
 import "./style/app.css"
 import { HangmanWord } from './components/HangmanWord'
+import { Keyboard } from './components/Keyboard'
 
 function App() {
   // Create an empty array that generates random word from our wordslist
@@ -20,6 +21,9 @@ function App() {
         Win
         <HangmanDrawing />
         <HangmanWord />
+        <div className='container-stretch'>
+          <Keyboard />
+        </div>
       </div>
     </div>
   )
