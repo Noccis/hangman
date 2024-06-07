@@ -2,6 +2,7 @@ import { useState } from 'react'
 import words from "./wordList.json"
 import { HangmanDrawing } from './components/HangmanDrawing'
 import "./style/app.css"
+import { HangmanWord } from './components/HangmanWord'
 
 function App() {
   // Create an empty array that generates random word from our wordslist
@@ -18,6 +19,7 @@ function App() {
         Lose
         Win
         <HangmanDrawing />
+        <HangmanWord />
       </div>
     </div>
   )
