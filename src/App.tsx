@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import words from "./wordList.json"
 import { HangmanDrawing } from './components/HangmanDrawing'
+import "./style/app.css"
 
 function App() {
   // Create an empty array that generates random word from our wordslist
@@ -11,19 +12,9 @@ function App() {
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
   console.log(wordToGuess)
   return (
-    <div style={{
-      maxWidth: "800px",
-      display: "flex",
-      flexDirection: "column",
-      gap: "2rem",
-      margin: "0 auto",
-      alignItems: "center"
-    }}>
+    <div id='main-content'>
 
-      <div style={{ 
-        fontSize: "2rem",
-        textAlign: "center"
-        }}>
+      <div id='game-container'>
         Lose
         Win
         <HangmanDrawing />
