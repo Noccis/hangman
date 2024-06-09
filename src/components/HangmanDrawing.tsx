@@ -20,14 +20,16 @@ const LEFT_LEG = (
     <div id="left-leg"/>
 )
 
-export function HangmanDrawing(){
+const BODY_PARTS = [HEAD, BODY, RIGHT_ARM, LEFT_ARM, RIGHT_LEG, LEFT_LEG]
+
+type HangmanDrawingProps = {
+    numberOfGuesses: number
+}
+
+export function HangmanDrawing({numberOfGuesses} : HangmanDrawingProps){
     return <div id="image-container">
-        {HEAD}
-        {BODY}
-        {RIGHT_ARM}
-        {LEFT_ARM}
-        {RIGHT_LEG}
-        {LEFT_LEG}
+        {BODY_PARTS.slice(0, numberOfGuesses)}
+       
         <div id="pole-tip"/>
         <div id="pole-top"/>
         <div id="pole-middle"/>
