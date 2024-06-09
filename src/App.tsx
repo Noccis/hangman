@@ -12,6 +12,11 @@ function App() {
   })
   // Create an empty string array for the letters that player has guessed
   const [guessedLetters, setGuessedLetters] = useState<string[]>([])
+
+  // Create an empty array for the incorrect letters
+  const incorrectLetters = guessedLetters.filter(
+    letter => !wordToGuess.includes(letter)
+  )
   console.log(wordToGuess)
   return (
     <div id='main-content'>
@@ -19,8 +24,8 @@ function App() {
       <div id='game-container'>
         Lose
         Win
-        <HangmanDrawing />
-        <HangmanWord />
+        <HangmanDrawing numberOfGuesses = {incorrectLetters.length} />
+        <HangmanWord guessedLetters={guessedLetters} wordToGuess={wordToGuess} />
         <div className='container-stretch'>
           <Keyboard />
         </div>

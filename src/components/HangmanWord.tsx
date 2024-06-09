@@ -1,23 +1,27 @@
 import "../style/hangmanWord.css"
 
-export function HangmanWord(){
+type HangmanWordProps = {
+    guessedLetters: string[]
+    wordToGuess: string
+}
+export function HangmanWord({ guessedLetters, wordToGuess }: HangmanWordProps) {
 
-    const word = "test"
-    const guessedLetters = ["t", "e"]
-
-    return(
+    return (
         <div id="word-container">
-            {word.split("").map((letter, index) => (
-                <span 
-                className="bottom-line"
-                key={index}
-                style={{
-                    visibility: guessedLetters.includes(letter)
-                    ? "visible"
-                    : "hidden",
-                }}>
-                    {letter}
+            {wordToGuess.split("").map((letter, index) => (
+                <span
+                    className="bottom-line"
+                    key={index}
+                >
+                    <span style={{
+                        visibility: guessedLetters.includes(letter)
+                            ? "visible"
+                            : "hidden",
+                    }}>
+                        {letter}
                     </span>
+
+                </span>
             ))}
         </div>
     )
